@@ -17,13 +17,13 @@
      0. Settings — edit these
      --------------------------------------------------------- */
   const CONFIG = {
-    // Your public contact address (also update the fallback text in index.html).
-    contactEmail: 'hello@example.com',
+    // Public contact address, used by every email link, the contact form and the chat helper.
+    contactEmail: 'contact@inclusign.website',
     // Optional form endpoint, e.g. a Formspree URL ("https://formspree.io/f/xxxx").
     // Leave empty and the form opens the visitor's email app with the message filled in.
     contactEndpoint: '',
-    // Your LinkedIn page (used by every LinkedIn link and the chat helper). Replace the placeholder.
-    linkedinUrl: 'https://www.linkedin.com/',
+    // Inclusign's LinkedIn page, used by every LinkedIn link and the chat helper.
+    linkedinUrl: 'https://www.linkedin.com/company/inclusign-ai/',
     // The full LSC dictionary. Leave empty while it's not live: the button shows "Coming soon".
     // Add its address (e.g. 'https://dictionnaire.inclusign.website') and the button becomes a real link.
     lscDictionaryUrl: '',

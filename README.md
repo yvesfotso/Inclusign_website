@@ -24,9 +24,9 @@ Most settings are at the top of `script.js`:
 
 | Setting | What it does |
 |---|---|
-| `CONFIG.contactEmail` | Contact address used across the site (currently a placeholder) |
+| `CONFIG.contactEmail` | Contact address used across the site: contact@inclusign.website |
 | `CONFIG.contactEndpoint` | Optional form service URL (e.g. Formspree). Leave it empty and the form opens the visitor's email app instead |
-| `CONFIG.linkedinUrl` | LinkedIn page for the footer button (currently a placeholder) |
+| `CONFIG.linkedinUrl` | LinkedIn page for the footer button and the chat helper: https://www.linkedin.com/company/inclusign-ai/ |
 | `CONFIG.lscDictionaryUrl` | Full LSC dictionary. While it's empty, the button shows "Coming soon" |
 | `TEAM` | Team members on `team.html`: name, role and bio (EN/FR), optional photo in `assets/team/`, optional LinkedIn |
 
