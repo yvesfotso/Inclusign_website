@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The team — Inclusign</title>
+  <meta name="description" content="Eight engineering students from ENSPD Douala designed and built Inclusign." />
+  <meta name="theme-color" content="#EAF5FF" />
+  <meta property="og:title" content="The team — Inclusign" />
+  <meta property="og:description" content="Eight engineering students from ENSPD Douala designed and built Inclusign." />
+  <meta property="og:image" content="assets/hero.jpg" />
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:ital,wght@0,400..700;1,400..500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=2026-10-04e" />
+  <script>
+    // Apply the saved (or system) theme before first paint to avoid a flash
+    (function () {
+      var root = document.documentElement, theme;
+      try { theme = localStorage.getItem('inclusign-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', theme);
+      root.classList.add('js');
+    })();
+  </script>
+</head>
+<body data-page="team">
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="nav-pill">
+      <a class="brand" href="index.html" aria-label="Inclusign — home">
+        <span class="logo" aria-hidden="true">
+          <img class="logo-mark on-light" src="assets/logo-mark.png" alt="" width="36" height="36" />
+          <img class="logo-mark on-dark" src="assets/logo-mark-dark.png" alt="" width="36" height="36" />
+          <img class="logo-word on-light" src="assets/logo-wordmark.png" alt="" width="93" height="20" />
+          <img class="logo-word on-dark" src="assets/logo-wordmark-dark.png" alt="" width="93" height="20" />
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#learning-features" data-i18n="nav.features">Features</a>
+        <a href="index.html#dictionary-overview" data-i18n="nav.dictionary">Dictionary</a>
+        <a href="index.html#practice-journey" data-i18n="nav.journey">Journey</a>
+        <a href="index.html#common-questions" data-i18n="nav.faq">FAQ</a>
+        <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+        <a href="team.html" class="is-active" aria-current="page" data-i18n="nav.team">Team</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-btn" type="button" aria-pressed="false" data-theme-toggle
+                aria-label="Dark mode" data-i18n-attr="aria-label:theme.dark;title:theme.toggle" title="Switch light / dark">
+          <svg width="20" height="20" class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+          <svg width="20" height="20" class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+        </button>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+        </div>
+        <a class="btn btn-ink btn-sm nav-cta" href="index.html#practice-journey" data-i18n="nav.cta">Start learning</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="sr-only" data-i18n="nav.menu">Menu</span>
+          <span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <a href="index.html#learning-features" data-i18n="nav.features">Features</a>
+      <a href="index.html#dictionary-overview" data-i18n="nav.dictionary">Dictionary</a>
+      <a href="index.html#practice-journey" data-i18n="nav.journey">Journey</a>
+      <a href="index.html#common-questions" data-i18n="nav.faq">FAQ</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+      <a href="team.html" aria-current="page" data-i18n="nav.team">Team</a>
+      <div class="menu-prefs">
+        <span data-i18n="theme.label">Appearance</span>
+        <div class="seg" role="group" aria-label="Appearance" data-i18n-attr="aria-label:theme.label">
+          <button type="button" data-theme-set="light" aria-pressed="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+            <span data-i18n="theme.lightShort">Light</span>
+          </button>
+          <button type="button" data-theme-set="dark" aria-pressed="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+            <span data-i18n="theme.darkShort">Dark</span>
+          </button>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="index.html#practice-journey" data-i18n="nav.cta">Start learning</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ───────────── Team intro ───────────── -->
+    <section class="page-hero" id="team-top" aria-labelledby="team-title">
+      <div class="container hero-copy">
+        <a class="back-link" href="index.html" data-i18n="team.back">← Back to home</a>
+        <p class="eyebrow" data-i18n="team.eyebrow">The team</p>
+        <h1 id="team-title" class="display" data-i18n="team.title">The people behind Inclusign.</h1>
+        <p class="lead" data-i18n="team.lead">Eight engineering students from ENSPD Douala designed and built Inclusign — to make sign language clear, welcoming and possible for everyone from day one.</p>
+      </div>
+    </section>
+
+    <!-- ───────────── Team members (edit TEAM at the top of script.js) ───────────── -->
+    <section class="team-section" aria-labelledby="team-title">
+      <div class="container">
+        <ul class="team-grid reveal reveal-children" data-team aria-label="Team members" data-i18n-attr="aria-label:team.gridLabel"></ul>
+      </div>
+    </section>
+
+    <!-- ───────────── Get in touch ───────────── -->
+    <section class="cta-wrap" aria-labelledby="team-cta-title">
+      <div class="container">
+        <div class="cta cta-solo reveal">
+          <div class="cta-copy">
+            <h2 id="team-cta-title" class="h2" data-i18n="team.ctaTitle">Want to work with us or share an idea?</h2>
+            <p data-i18n="team.ctaText">We’d love to hear from you.</p>
+            <div class="cta-row">
+              <a class="btn btn-light" href="index.html#contact">
+                <span data-i18n="team.ctaContact">Contact the team</span>
+                <svg class="arr" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-outline-light" href="index.html" data-i18n="team.ctaHome">Discover Inclusign</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand brand-lg" href="index.html" aria-label="Inclusign">
+            <span class="logo" aria-hidden="true">
+              <img class="logo-mark on-light" src="assets/logo-mark.png" alt="" width="36" height="36" />
+              <img class="logo-mark on-dark" src="assets/logo-mark-dark.png" alt="" width="36" height="36" />
+              <img class="logo-word on-light" src="assets/logo-wordmark.png" alt="" width="93" height="20" />
+              <img class="logo-word on-dark" src="assets/logo-wordmark-dark.png" alt="" width="93" height="20" />
+            </span>
+          </a>
+          <p data-i18n="footer.blurb">Learning sign language should feel clear, welcoming, and possible from day one. Thanks for learning with us.</p>
+          <p class="footer-contact"><span data-i18n="footer.contact">Need a different format or extra support? Email us at</span>
+            <!-- TODO: replace with your real contact address -->
+            <a href="mailto:hello@example.com" data-email>hello@example.com</a></p>
+          <div class="socials">
+            <span class="footer-h" data-i18n="footer.follow">Follow us</span>
+            <!-- TODO: replace with your LinkedIn page (also set CONFIG.linkedinUrl in script.js) -->
+            <a class="social-btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" data-linkedin
+               aria-label="Inclusign on LinkedIn (opens in a new tab)" data-i18n-attr="aria-label:social.linkedin;title:social.linkedinShort" title="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-labelledby="f-learn">
+          <p class="footer-h" id="f-learn" data-i18n="footer.learn">Learn</p>
+          <a href="index.html#learning-features" data-i18n="nav.features">Features</a>
+          <a href="index.html#dictionary-overview" data-i18n="nav.dictionary">Dictionary</a>
+          <a href="index.html#practice-journey" data-i18n="nav.journey">Journey</a>
+        </nav>
+        <nav class="footer-col" aria-labelledby="f-quick">
+          <p class="footer-h" id="f-quick" data-i18n="footer.quick">Quick access</p>
+          <a href="index.html#common-questions" data-i18n="nav.faq">FAQ</a>
+          <a href="index.html#learner-stories" data-i18n="footer.stories">Learner stories</a>
+          <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+          <a href="team.html" aria-current="page" data-i18n="nav.team">Team</a>
+          <a href="#team-top" data-i18n="footer.top">Back to top</a>
+        </nav>
+      </div>
+      <div class="footer-base">
+        <p data-i18n="footer.copy">© 2026 Inclusign · Inclusive sign language learning resources for beginners.</p>
+      </div>
+    </div>
+    <p class="wordmark" aria-hidden="true">Inclusign</p>
+  </footer>
+
+  <!-- ───────────── Chat helper ───────────── -->
+  <button class="chat-launcher" type="button" aria-expanded="false" aria-controls="chat-panel" data-chat-launcher>
+    <svg width="20" height="20" class="i-chat" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01" stroke-width="2.6"/></svg>
+    <svg width="20" height="20" class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    <span class="label" data-i18n="chat.launch">Ask a question</span>
+    <span class="dot-new" aria-hidden="true"></span>
+  </button>
+
+  <section class="chat-panel" id="chat-panel" role="dialog" aria-labelledby="chat-title" aria-describedby="chat-sub" hidden data-chat-panel>
+    <header class="chat-head">
+      <span class="chat-avatar" aria-hidden="true"><img src="assets/logo-mark.png" alt="" width="30" height="30" /></span>
+      <div>
+        <p class="chat-title" id="chat-title" data-i18n="chat.title">Inclusign helper</p>
+        <p class="chat-sub" id="chat-sub" data-i18n="chat.sub">Automated answers from our guides</p>
+      </div>
+      <button type="button" class="chat-icon-btn" data-chat-reset aria-label="Start over" data-i18n-attr="aria-label:chat.reset;title:chat.reset" title="Start over">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4.5h4.5"/></svg>
+      </button>
+      <button type="button" class="chat-icon-btn" data-chat-close aria-label="Close chat" data-i18n-attr="aria-label:chat.close;title:chat.close" title="Close chat">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </header>
+
+    <div class="chat-log" role="log" aria-live="polite" aria-relevant="additions" data-chat-log></div>
+
+    <form class="chat-form" data-chat-form>
+      <label class="sr-only" for="chat-input" data-i18n="chat.inputLabel">Type your question</label>
+      <input id="chat-input" type="text" autocomplete="off" maxlength="300" enterkeyhint="send"
+             placeholder="Type your question…" data-i18n-attr="placeholder:chat.placeholder" />
+      <button class="chat-send" type="submit" aria-label="Send" data-i18n-attr="aria-label:chat.send" disabled>
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+      </button>
+    </form>
+    <p class="chat-foot" data-i18n="chat.foot">Automated helper · for anything else, use the contact form.</p>
+  </section>
+
+  <script src="script.js?v=2026-10-04f" defer></script>
+</body>
+</html>
