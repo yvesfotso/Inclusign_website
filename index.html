@@ -8,7 +8,13 @@
   <meta name="theme-color" content="#EAF5FF" />
   <meta property="og:title" content="Inclusign — Learn sign language, clearly" />
   <meta property="og:description" content="Beginner-first lessons, a visual dictionary, and calm practice tools." />
-  <meta property="og:image" content="assets/hero.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Inclusign" />
+  <meta property="og:url" content="https://www.inclusign.website/" />
+  <meta property="og:image" content="https://www.inclusign.website/assets/hero.jpg" />
+  <meta property="og:image:alt" content="A smiling young man holds up one hand, thumb and index finger forming a circle." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://www.inclusign.website/" />
   <link rel="icon" href="assets/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
@@ -17,8 +23,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:ital,wght@0,400..700;1,400..500&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="assets/hero.jpg" />
-  <link rel="stylesheet" href="styles.css?v=2026-10-04e" />
+  <link rel="preload" as="image" href="assets/hero.jpg" imagesrcset="assets/hero-sm.jpg 1200w, assets/hero.jpg 2000w" imagesizes="(max-width: 900px) 100vw, 50vw" />
+  <link rel="stylesheet" href="styles.css?v=2026-10-09a" />
   <script>
     // Apply the saved (or system) theme before first paint to avoid a flash
     (function () {
@@ -170,7 +176,7 @@
 
         <figure class="hero-figure">
           <div class="stage">
-            <img src="assets/hero.jpg" width="2000" height="1333"
+            <img src="assets/hero.jpg" srcset="assets/hero-sm.jpg 1200w, assets/hero.jpg 2000w" sizes="(max-width: 900px) 100vw, 50vw" width="2000" height="1333"
                  alt="A smiling young man holds up one hand, thumb and index finger forming a circle."
                  data-i18n-attr="alt:hero.alt" fetchpriority="high" />
 
@@ -344,7 +350,7 @@
 
         <div class="bento">
           <figure class="tile tile-photo reveal from-left">
-            <img src="assets/learning.jpg" width="1800" height="1013" loading="lazy"
+            <img src="assets/learning.jpg" srcset="assets/learning-sm.jpg 900w, assets/learning.jpg 1800w" sizes="(max-width: 1080px) 100vw, 35vw" width="1800" height="1013" loading="lazy"
                  alt="A young man smiling broadly, both open hands raised to one side."
                  data-i18n-attr="alt:features.alt" />
             <figcaption>
@@ -665,6 +671,6 @@
     <p class="chat-foot" data-i18n="chat.foot">Automated helper · for anything else, use the contact form.</p>
   </section>
 
-  <script src="script.js?v=2026-10-04h" defer></script>
+  <script src="script.js?v=2026-10-09b" defer></script>
 </body>
 </html>

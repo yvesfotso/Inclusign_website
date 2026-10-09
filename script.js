@@ -346,6 +346,15 @@
     [META_DESC]: $('meta[name="description"]')?.content || '',
   };
   $$('[data-i18n]').forEach((el) => { EN[el.dataset.i18n] ??= el.innerHTML; });
+  // The chat helper answers from these on every page, including pages that don't show the FAQ
+  Object.entries({
+    'hero.lead': "Start with beginner-first lessons, explore signs visually, and build everyday confidence at your own pace with Inclusign’s interactive learning tools.",
+    'faq.a1': "Not at all. Inclusign starts with simple, visual foundations so you can build confidence step by step without feeling overwhelmed.",
+    'faq.a2': "Yes. The lessons and practice flow are designed specifically for early-stage learners who want clear guidance and approachable progress.",
+    'faq.a3': "You can quickly explore signs by topic, compare similar gestures, and reinforce what you just learned with immediate visual reference.",
+    'faq.a4': "Absolutely. Inclusign is built for flexible learning, so you can practice in short sessions, revisit essentials, and move forward when ready.",
+    'faq.a5': "Start with the beginner path, try a few core signs, then use the dictionary to explore related terms and build daily consistency.",
+  }).forEach(([key, value]) => { EN[key] ??= value; });
   $$('[data-i18n-attr]').forEach((el) => {
     el.dataset.i18nAttr.split(';').forEach((pair) => {
       const [attr, key] = pair.split(':');
@@ -511,6 +520,9 @@
     showLeaving = true;
     clearTimeout(showTimer);
     root.classList.remove('intro'); // unlock scrolling and start the hero entrance
+    // Opened on a section link (e.g. /#contact)? Land exactly on it now that the page has settled
+    const linked = location.hash.length > 1 && document.getElementById(location.hash.slice(1));
+    if (linked) linked.scrollIntoView({ behavior: 'instant', block: 'start' });
 
     if (!fly) {
       show.classList.add('is-leaving');
@@ -636,11 +648,27 @@
      5. Scroll reveal + active nav link
      --------------------------------------------------------- */
   const reveals = $$('.reveal');
+  const unrevealed = new Set(reveals);
+  let io = null;
+  const reveal = (el) => { el.classList.add('in'); unrevealed.delete(el); if (io) io.unobserve(el); };
+
+  // Safety net: some phones skip observer callbacks during fast swipes, so also check on scroll —
+  // a section can never stay invisible once it's on screen. Printing shows everything.
+  let sweeping = false;
+  const sweep = () => {
+    sweeping = false;
+    const limit = window.innerHeight * 0.95;
+    unrevealed.forEach((el) => { if (el.getBoundingClientRect().top < limit) reveal(el); });
+    if (!unrevealed.size) window.removeEventListener('scroll', onRevealScroll);
+  };
+  const onRevealScroll = () => { if (!sweeping) { sweeping = true; setTimeout(sweep, 120); } };
+  window.addEventListener('scroll', onRevealScroll, { passive: true });
+  window.addEventListener('load', () => setTimeout(sweep, 300));
+  window.addEventListener('beforeprint', () => unrevealed.forEach(reveal));
+
   if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
-      });
+    io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) reveal(entry.target); });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
     reveals.forEach((el) => io.observe(el));
 
@@ -654,7 +682,7 @@
     ['learning-features', 'dictionary-overview', 'practice-journey', 'common-questions', 'contact', 'hero-learning']
       .forEach((id) => { const s = document.getElementById(id); if (s) spy.observe(s); });
   } else {
-    reveals.forEach((el) => el.classList.add('in'));
+    reveals.forEach(reveal);
   }
 
   /* ---------------------------------------------------------
@@ -1343,6 +1371,7 @@
       busy = true;
       const typing = addMessage('bot typing', '<i></i><i></i><i></i>');
       typing.setAttribute('aria-hidden', 'true');
+      reply = { text: String((reply && reply.text) || BOT[lang].fallback), chips: (reply && reply.chips) || [] };
       const wait = reduceMotion.matches ? 120 : (delay ?? Math.min(450 + reply.text.length * 5, 1200));
       setTimeout(() => {
         typing.remove();
